@@ -49,8 +49,6 @@ module Plutarch.List (
   -- * Special Folds
   pall,
   pany,
-
-
 ) where
 
 import Numeric.Natural (Natural)
@@ -76,8 +74,7 @@ import Plutarch (
   (#$),
   type (:-->),
  )
-import Plutarch.Bool (PBool (PFalse, PTrue), PEq, POrd, pif, pnot, (#&&), (#==), (#<=), (#<), (#||))
-import Plutarch.Maybe (PMaybe(PJust,PNothing))
+import Plutarch.Bool (PBool (PFalse, PTrue), PEq, POrd, pif, pnot, (#&&), (#<), (#<=), (#==), (#||))
 import Plutarch.Integer (PInteger)
 import Plutarch.Lift (pconstant)
 import Plutarch.Maybe (PMaybe (PJust, PNothing))
@@ -438,7 +435,7 @@ pelemAt' = phoistAcyclic $
     pif
       (n #== 0)
       (phead # xs)
-      (self # (n -1) #$ ptail # xs)
+      (self # (n - 1) #$ ptail # xs)
 
 pfind :: (PIsListLike l a) => Term s ((a :--> PBool) :--> l a :--> PMaybe a)
 pfind = phoistAcyclic $
