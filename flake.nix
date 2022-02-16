@@ -48,7 +48,7 @@
   inputs.haskell-language-server.flake = false;
 
   # These use the PRs from https://github.com/NorfairKing/sydtest/issues/35
-  inputs.sydtest.url = "github:srid/sydtest/ghc921";
+  inputs.sydtest.url = "github:Geometer1729/sydtest?rev=06d3983ba48b43f819d1b4f958e8a42727f5abc4";
   inputs.sydtest.flake = false;
   inputs.validity.url = "github:srid/validity/ghc921";
   inputs.validity.flake = false;
@@ -124,6 +124,7 @@
             "sydtest"
             "sydtest-discover"
             "sydtest-aeson"
+            "sydtest-hedgehog"
           ];
         }
         {
@@ -510,6 +511,7 @@
               # sydtest dependencies
               ps.sydtest
               ps.sydtest-discover
+              ps.sydtest-hedgehog
               ps.sydtest-aeson
               ps.validity
               ps.validity-aeson
@@ -606,7 +608,7 @@
 
       # Take a flake app (identified as the key in the 'apps' set), and return a
       # derivation that runs it in the compile phase.
-      # 
+      #
       # In effect, this allows us to run an 'app' as part of the build process (eg: in CI).
       flakeApp2Derivation = system: appName:
         (nixpkgsFor system).runCommand appName { } "${self.apps.${system}.${appName}.program} | tee $out";
@@ -647,7 +649,7 @@
             "ghc810-plutarch:lib:plutarch" = (self.projectMatrix.ghc810.nodev.${system}.flake { }).packages."plutarch:lib:plutarch";
             "ghc810-plutarch:lib:plutarch-test" = (self.projectMatrix.ghc810.nodev.${system}.flake { }).packages."plutarch-test:lib:plutarch-test";
           });
-      # Because `nix flake check` does not work with haskell.nix (due to IFD), 
+      # Because `nix flake check` does not work with haskell.nix (due to IFD),
       # we provide this attribute for running the checks locally, using:
       #   nix build .#check.x86_64-linux
       check = perSystem (system:
