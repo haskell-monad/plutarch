@@ -79,11 +79,7 @@ common deps
     , bytestring
     , filepath
     , generics-sop
-<<<<<<< HEAD
     , mtl
-=======
-    , hedgehog
->>>>>>> 30ed5f2 (add goldens)
     , plutarch
     , plutarch-extra
     , plutus-core
