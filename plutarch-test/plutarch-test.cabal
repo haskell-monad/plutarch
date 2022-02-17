@@ -32,9 +32,9 @@ common c
     ExistentialQuantification
     ExplicitForAll
     FlexibleContexts
-    FunctionalDependencies
     FlexibleInstances
     ForeignFunctionInterface
+    FunctionalDependencies
     GADTSyntax
     GeneralisedNewtypeDeriving
     HexFloatLiterals
@@ -79,7 +79,11 @@ common deps
     , bytestring
     , filepath
     , generics-sop
+<<<<<<< HEAD
     , mtl
+=======
+    , hedgehog
+>>>>>>> 30ed5f2 (add goldens)
     , plutarch
     , plutarch-extra
     , plutus-core
@@ -87,14 +91,13 @@ common deps
     , plutus-tx
     , serialise
     , sydtest
-    , sydtest-hedgehog
     , sydtest-discover
+    , sydtest-hedgehog
     , tasty
     , tasty-hunit
     , tasty-quickcheck
     , text
     , transformers
-    , hedgehog
 
 library
   import:          c, deps
