@@ -140,8 +140,6 @@ executable plutarch-test
     Plutarch.PIsDataSpec
     Plutarch.PLamSpec
     Plutarch.PlutusTypeSpec
-    Plutarch.Property.Gen
-    Plutarch.Property.Util
     Plutarch.RationalSpec
     Plutarch.RecursionSpec
     Plutarch.ScriptsSpec
