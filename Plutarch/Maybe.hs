@@ -7,11 +7,6 @@ import Plutarch (
   PlutusType,
   S,
   Term,
-  pcon,
-  phoistAcyclic,
-  plam,
-  pmatch,
-  (#),
  )
 import Plutarch.Bool (PEq)
 import Plutarch.Show (PShow)

@@ -511,7 +511,6 @@
               # sydtest dependencies
               ps.sydtest
               ps.sydtest-discover
-              ps.sydtest-hedgehog
               ps.sydtest-aeson
               ps.validity
               ps.validity-aeson

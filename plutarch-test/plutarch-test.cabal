@@ -88,7 +88,6 @@ common deps
     , serialise
     , sydtest
     , sydtest-discover
-    , sydtest-hedgehog
     , tasty
     , tasty-hunit
     , tasty-quickcheck
